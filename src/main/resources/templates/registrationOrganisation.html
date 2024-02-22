@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма для заполнения документов</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    label {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .required-asterisk {
+      color: red;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+
+  <div class="container">
+    <h2 class="text-center mt-5 mb-4">Заполнить документы для Юридического лица</h2>
+    <form>
+      <div class="form-group">
+        <label for="charter">Устав<span class="required-asterisk">*</span></label>
+        <br>
+        <input type="file" id="charter" multiple required>
+      </div>
+      <div class="form-group">
+        <label for="certificat">Свидетельство о регистрации юр. лица<span class="required-asterisk">*</span></label>
+        <br>
+        <input type="file" id="certificat" multiple required>
+      </div>
+      <div class="form-group">
+        <label for="extract">Выписка из ЕГЮРЛ<span class="required-asterisk">*</span></label>
+        <br>
+        <input type="file" id="extract" multiple required>
+      </div>
+      <div class="form-group">
+        <label>Анкета клиента<span class="required-asterisk">*</span></label>
+        <a href="innoprog.ru"><u>скачать шаблон</u></a>
+        <br>
+        <input type="file" multiple required>
+      </div>
+      <div class="form-group">
+        <label>Анкета бенефициара<span class="required-asterisk">*</span></label>
+        <a href="innoprog.ru"><u>скачать шаблон</u></a>
+        <br>
+        <input type="file" multiple required>
+      </div>
+      <div class="form-group">
+        <label>Соглашение на обработку персональных данных<span class="required-asterisk">*</span></label>
+        <a href="innoprog.ru"><u>скачать шаблон</u></a> <br>
+        <input type="file" multiple required>
+      </div>
+      <div class="form-group">
+        <label for="passport">Паспорт Директора, Доверенного лица, Учредителя<span class="required-asterisk">*</span></label>
+        <br>
+        <input type="file" id="passport" multiple required>
+      </div>
+      <div class="form-group">
+        <label>Проект договора<span class="required-asterisk">*</span></label> <a href="innoprog.ru"><u>скачать шаблон</u></a>
+        <br>
+        <input type="file" multiple required>
+      </div>
+      <div class="form-group">
+        <label for="fns">Справка об отсутствии задолженности ФНС за 30 дней<span class="required-asterisk">*</span></label>
+       
+        <br>
+        <input type="file" id="fns" multiple required>
+      </div>
+      <div class="form-group">
+        <label>Договор поставки товара, работ, услуг<span class="required-asterisk">*</span></label>
+        <br>
+        <input type="file" multiple required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block mt-4">Отправить на проверку</button>
+      <br>
+    </form>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

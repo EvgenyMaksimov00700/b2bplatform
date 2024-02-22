@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login and Registration</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-white" >
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Вход в аккаунт форма -->
+            <div class="col-md-6 offset-md-3" id="loginForm">
+                <h2 class="mb-4">Вход в аккаунт</h2>
+                <form action = "documents+++.html"> 
+                    <div class="form-group">
+                        <label for="phone">Номер телефона</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Введите номер телефона">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" class="form-control" id="password" placeholder="Введите пароль">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                    <p class="mt-3">Нет аккаунта? <a href="#" onclick="toggleForms()">Зарегистрируйтесь</a></p>
+                </form>
+            </div>
+
+            <!-- Регистрация форма -->
+            <div class="col-md-6 offset-md-3" id="registrationForm" style="display: none;">
+                <h2 class="mb-4">Регистрация</h2>
+                <form>
+                    <div class="btn-group mb-3" role="group" aria-label="Тип аккаунта">
+                        <button type="button" class="btn btn-light" onclick="selectAccountType('individual')" id="fiz">Физ. лицо</button>
+                        <button type="button" class="btn btn-light" onclick="selectAccountType('business')" id="ur">Юр. лицо</button>
+                    </div>
+
+                    <!-- Общие данные для обоих типов аккаунтов -->
+                    <div class="form-group">
+                        <label for="fullName">ФИО</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Введите ФИО">
+                    </div>
+
+                    <!-- Дополнительные данные для "Юр. лицо" -->
+                    <div class="form-group" id="organizationForm" style="display: none;">
+                        <label for="organizationName">Название организации</label>
+                        <input type="text" class="form-control" id="organizationName" placeholder="Введите название организации">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registrationPhone">Номер телефона</label>
+                        <input type="tel" class="form-control" id="registrationPhone" placeholder="Введите номер телефона">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registrationPassword">Пароль</label>
+                        <input type="password" class="form-control" id="registrationPassword" placeholder="Введите пароль">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Подтвердить пароль</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Подтвердите пароль">
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Зарегистрироваться</button>
+                    <p class="mt-3">Уже есть аккаунт? <a href="#" onclick="toggleForms()">Войдите</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function toggleForms() {
+            var loginForm = document.getElementById('loginForm');
+            var registrationForm = document.getElementById('registrationForm');
+
+            if (loginForm.style.display === 'block') {
+                loginForm.style.display = 'none';
+                registrationForm.style.display = 'block';
+            } else {
+                loginForm.style.display = 'block';
+                registrationForm.style.display = 'none';
+            }
+            
+        }
+
+        function selectAccountType(accountType) {
+            var organizationForm = document.getElementById('organizationForm');
+            var individual = document.getElementById ('fiz');
+            var business = document.getElementById ('ur');
+            if (accountType === 'business') {
+                organizationForm.style.display = 'block';
+                business.style.backgroundColor= "#28a745";
+                individual.style.backgroundColor="#f8f9fa";
+            } else {
+                organizationForm.style.display = 'none';
+                business.style.backgroundColor= "#f8f9fa";
+                individual.style.backgroundColor="#28a745";
+            }
+        }
+    </script>
+</body>
+
+</html>
