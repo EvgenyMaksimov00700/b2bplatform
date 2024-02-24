@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Login and Registration</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .clickable-text{
+            color:blue; 
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body class="bg-dark text-white" >
@@ -15,17 +22,17 @@
             <!-- Вход в аккаунт форма -->
             <div class="col-md-6 offset-md-3" id="loginForm">
                 <h2 class="mb-4">Вход в аккаунт</h2>
-                <form action = "documents+++.html"> 
+                <form action = "/autorization" method="post">
                     <div class="form-group">
                         <label for="phone">Номер телефона</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Введите номер телефона">
+                        <input type="tel" class="form-control" id="phone"  name="login" placeholder="Введите номер телефона">
                     </div>
                     <div class="form-group">
                         <label for="password">Пароль</label>
-                        <input type="password" class="form-control" id="password" placeholder="Введите пароль">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Введите пароль">
                     </div>
                     <button type="submit" class="btn btn-primary">Войти</button>
-                    <p class="mt-3">Нет аккаунта? <a href="#" onclick="toggleForms()">Зарегистрируйтесь</a></p>
+                    <p class="mt-3">Нет аккаунта? <a class='clickable-text' onclick="toggleForms()">Зарегистрируйтесь</a></p>
                 </form>
             </div>
 
@@ -36,6 +43,7 @@
                     <div class="btn-group mb-3" role="group" aria-label="Тип аккаунта">
                         <button type="button" class="btn btn-light" onclick="selectAccountType('individual')" id="fiz">Физ. лицо</button>
                         <button type="button" class="btn btn-light" onclick="selectAccountType('business')" id="ur">Юр. лицо</button>
+                        <button type="button" class="btn btn-light" onclick="selectAccountType('ip')" id="ip">ИП</button>
                     </div>
 
                     <!-- Общие данные для обоих типов аккаунтов -->
@@ -66,7 +74,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-success">Зарегистрироваться</button>
-                    <p class="mt-3">Уже есть аккаунт? <a href="#" onclick="toggleForms()">Войдите</a></p>
+                    <p class="mt-3">Уже есть аккаунт? <a  class='clickable-text' onclick="toggleForms()">Войдите</a></p>
                 </form>
             </div>
         </div>
@@ -95,14 +103,23 @@
             var organizationForm = document.getElementById('organizationForm');
             var individual = document.getElementById ('fiz');
             var business = document.getElementById ('ur');
+            var ip = document.getElementById ('ip');
             if (accountType === 'business') {
                 organizationForm.style.display = 'block';
                 business.style.backgroundColor= "#28a745";
                 individual.style.backgroundColor="#f8f9fa";
+                ip.style.backgroundColor = "#f8f9fa";
+            } else if (accountType === 'ip') {
+                organizationForm.style.display = 'none';
+                business.style.backgroundColor= "#f8f9fa";
+                individual.style.backgroundColor="#f8f9fa";
+                ip.style.backgroundColor = "#28a745";
+
             } else {
                 organizationForm.style.display = 'none';
                 business.style.backgroundColor= "#f8f9fa";
                 individual.style.backgroundColor="#28a745";
+                ip.style.backgroundColor = "#f8f9fa";
             }
         }
     </script>
